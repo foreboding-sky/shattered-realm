@@ -18,7 +18,6 @@ public class AbilityHolder : MonoBehaviour
     {
         Initialize(ability);
     }
-
     void Update()
     {
         
@@ -28,7 +27,6 @@ public class AbilityHolder : MonoBehaviour
     {
         ability = selectedAbility;
     }
-
     //IEnumerator CoolDown()
     //{
     //    ability.TriggerAbility();
@@ -39,7 +37,6 @@ public class AbilityHolder : MonoBehaviour
         CDText.enabled = false;
         CDMask.enabled = false;
     }
-
     private void CoolDown()
     {
         CuttentAbilityCD -= Time.deltaTime;
