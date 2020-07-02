@@ -2,16 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(menuName = "Abilities/DashAbility")]
-public class DashAbility : Ability
+public class DashAbility : MonoBehaviour, IAbility
 {
-    
-    public override void Initialize(GameObject obj)
-    {
+    public string Name { get => throw new System.NotImplementedException(); set => throw new System.NotImplementedException(); }
+    public string Description { get => throw new System.NotImplementedException(); set => throw new System.NotImplementedException(); }
+    public float CoolDown { get => throw new System.NotImplementedException(); set => throw new System.NotImplementedException(); }
 
-    }
-
-    public override void TriggerAbility()
+    public void TriggerAbility()
     {
         
     }

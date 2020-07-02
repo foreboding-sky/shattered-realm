@@ -1,14 +1,13 @@
 ﻿using UnityEngine;
 
-public abstract class Ability : ScriptableObject
+public interface IAbility
 {
-    protected string Name = "New Ability";
-    protected string Description = "This is an ability!";
+    string Name { get; set; }
+    string Description { get; set; }
     //protected UasgeCost;
-    protected Sprite Icon;
-    protected AudioClip Sound;
-    protected float BaseCoolDown = 1f;
+    //protected Sprite Icon;
+    //protected AudioClip Sound;
+    float CoolDown { get; set; }
 
-    public abstract void Initialize(GameObject obj);
-    public abstract void TriggerAbility();
+    void TriggerAbility();
 }

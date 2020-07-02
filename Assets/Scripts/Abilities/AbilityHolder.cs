@@ -9,7 +9,7 @@ public class AbilityHolder : MonoBehaviour
     [SerializeField] private Image CDMask;
     [SerializeField] private Text CDText;
 
-    [SerializeField] Ability ability;
+    [SerializeField] IAbility ability;
 
     private float AbilityCD;
     private float CuttentAbilityCD;
@@ -23,7 +23,7 @@ public class AbilityHolder : MonoBehaviour
         
         //StartCoroutine("CoolDown");
     }
-    public void Initialize(Ability selectedAbility)
+    public void Initialize(IAbility selectedAbility)
     {
         ability = selectedAbility;
     }
