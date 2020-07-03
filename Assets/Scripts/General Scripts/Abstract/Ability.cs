@@ -1,13 +1,13 @@
 ﻿using UnityEngine;
 
-public interface IAbility
+public abstract class Ability : MonoBehaviour
 {
-    string Name { get; set; }
-    string Description { get; set; }
-    //protected UasgeCost;
-    //protected Sprite Icon;
-    //protected AudioClip Sound;
-    float CoolDown { get; set; }
+    protected string _name;
+    protected string _description;
+    //public UasgeCost;
+    //public Sprite Icon;
+    //public AudioClip Sound;
+    protected float _cooldown;
 
-    void TriggerAbility();
+    public abstract void TriggerAbility();
 }

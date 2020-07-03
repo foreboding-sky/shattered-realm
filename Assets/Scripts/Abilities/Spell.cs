@@ -1,18 +1,17 @@
 ﻿using UnityEngine;
 
-public class Spell : MonoBehaviour, IAbility
+public class Spell : Ability
 {
     public GameObject projectile;
     public float minDamage;
     public float maxDamage;
     public float projectileForce;
     public Camera cam;
+    public new string _name = "Spell";
+    public new string _description = "A simple spell";
+    public new float _cooldown = 2f;
 
-    public string Name { get; set; }
-    public string Description { get => throw new System.NotImplementedException(); set => throw new System.NotImplementedException(); }
-    public float CoolDown { get => throw new System.NotImplementedException(); set => throw new System.NotImplementedException(); }
-
-    public void TriggerAbility()
+    public override void TriggerAbility()
     {
         Ray ray = cam.ScreenPointToRay(Input.mousePosition);
         RaycastHit hit;
@@ -30,9 +29,6 @@ public class Spell : MonoBehaviour, IAbility
 
     void Start()
     {
-        Name = "Spell";
-        Description = "A simple spell";
-        CoolDown = 1f;
         cam = Camera.main;
     }
     private void Update()

@@ -5,27 +5,27 @@ using UnityEngine.UI;
 
 public class AbilityHolder : MonoBehaviour
 {
-    [SerializeField] private string AbilityButtonName;
-    [SerializeField] private Image CDMask;
-    [SerializeField] private Text CDText;
+    [SerializeField] private string _abilityButtonName;
+    [SerializeField] private Image _CDMask;
+    [SerializeField] private Text _CDText;
 
-    [SerializeField] IAbility ability;
+    [SerializeField] private Ability _ability;
 
-    private float AbilityCD;
-    private float CuttentAbilityCD;
+    private float _abilityCD;
+    private float _cuttentAbilityCD;
 
     void Start()
     {
-        Initialize(ability);
+        Initialize(_ability);
     }
     void Update()
     {
         
         //StartCoroutine("CoolDown");
     }
-    public void Initialize(IAbility selectedAbility)
+    public void Initialize(Ability selectedAbility)
     {
-        ability = selectedAbility;
+        _ability = selectedAbility;
     }
     //IEnumerator CoolDown()
     //{
@@ -34,14 +34,14 @@ public class AbilityHolder : MonoBehaviour
     //}
     private void AbilityReady()
     {
-        CDText.enabled = false;
-        CDMask.enabled = false;
+        _CDText.enabled = false;
+        _CDMask.enabled = false;
     }
     private void CoolDown()
     {
-        CuttentAbilityCD -= Time.deltaTime;
-        float roundedCd = Mathf.Round(CuttentAbilityCD);
-        CDText.text = roundedCd.ToString();
-        CDMask.fillAmount = (CuttentAbilityCD / CuttentAbilityCD);
+        _cuttentAbilityCD -= Time.deltaTime;
+        float roundedCd = Mathf.Round(_cuttentAbilityCD);
+        _CDText.text = roundedCd.ToString();
+        _CDMask.fillAmount = (_cuttentAbilityCD /_cuttentAbilityCD);
     }
 }

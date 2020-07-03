@@ -2,13 +2,19 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DashAbility : MonoBehaviour, IAbility
+public class DashAbility : Ability
 {
-    public string Name { get => throw new System.NotImplementedException(); set => throw new System.NotImplementedException(); }
-    public string Description { get => throw new System.NotImplementedException(); set => throw new System.NotImplementedException(); }
-    public float CoolDown { get => throw new System.NotImplementedException(); set => throw new System.NotImplementedException(); }
+    [SerializeField]
+    public new string _name = "";
+    [SerializeField]
+    public new string _description = "";
+    [SerializeField]
+    public new float _cooldown = 2f;
 
-    public void TriggerAbility()
+    private void Start()
+    {
+    }
+    public override void TriggerAbility()
     {
         
     }
